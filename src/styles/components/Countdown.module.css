@@ -71,7 +71,7 @@
 }
 
 .countdownButtonActive:not(:disabled):hover {
-  background: var(--red);
+  background: var(--red-dark);
   color: var(--white);
 }
 
@@ -79,4 +79,13 @@
   background: var(--white);
   color: var(--text);
   cursor: not-allowed;
+
+  border-bottom: 3px solid var(--green);
+}
+
+.iconStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }

@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react'
 import styles from '../styles/components/Countdown.module.css'
 
+import { FiX } from 'react-icons/fi'
+import{ AiFillCheckCircle } from 'react-icons/ai'
+import { BsPlayFill } from 'react-icons/bs'
+
 let countdownTimeout: NodeJS.Timeout
 
 export function Countdown() {
-    const [time, setTime] = useState(25 * 60)
+    const [time, setTime] = useState(0.1 * 60)
     const [isActive, setIsActive] = useState(false)
     const [hasFinished, setHasFinished] = useState(false)
 
@@ -21,7 +25,7 @@ export function Countdown() {
     function resetCountdown() {
         clearTimeout(countdownTimeout)
         setIsActive(false)
-        setTime(25 * 60)
+        setTime(0.1 * 60)
     }
 
     useEffect(() => {
@@ -52,27 +56,27 @@ export function Countdown() {
             { hasFinished ? (
                 <button
                     disabled  
-                    className={styles.startCountdownButton}
+                    className={`${styles.startCountdownButton} ${styles.iconStyle}`}
                 >
-                    Ciclo encerrado
+                    Ciclo encerrado <AiFillCheckCircle color='#4cd62b' size={22} />
             </button>
             ) : (
                 <>
                     { isActive ? (
                         <button 
                             type="button" 
-                            className={`${styles.startCountdownButton} ${styles.countdownButtonActive}`}
+                            className={`${styles.startCountdownButton} ${styles.countdownButtonActive} ${styles.iconStyle}`}
                             onClick={resetCountdown}
                         >
-                            Abandonar ciclo
+                            Abandonar ciclo <FiX color='#666' size={22} />
                         </button> 
                     ) : (
                         <button 
                             type="button" 
-                            className={styles.startCountdownButton}
+                            className={`${styles.startCountdownButton} ${styles.iconStyle}`}
                             onClick={startCountdown}
                         >
-                                Iniciar um ciclo
+                                Iniciar um ciclo <BsPlayFill size={22} color='#fff' />
                         </button>
                     ) }
                 </>
