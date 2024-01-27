@@ -20,6 +20,7 @@ Projeto exclusivo, promovido pela Rocketseat para ensino de tecnologias WEB.
   <img alt="moveIt" src=".github/moveit-preview3.png" width="100%">
 
   <br>
+  <br>
 
   <img alt="moveIt" src=".github/moveit-preview2.png" width="100%">
 </p>
